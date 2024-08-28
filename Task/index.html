@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Divs</title>
+    <style>
+        .box {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .box1 { background-color: pink; }
+        .box2 { background-color: lightgreen; }
+        .box3 { background-color: blue; }
+        .disabled { opacity: 0.5; }
+    </style>
+</head>
+<body>
+    <div class="box box1" onclick="handleClick(this)"></div>
+    <div class="box box2" onclick="handleClick(this)"></div>
+    <div class="box box3" onclick="handleClick(this)"></div>
+
+    <script>
+        function handleClick(div) {
+            div.classList.add('disabled'); 
+            div.onclick = null;
+
+            var newDiv = div.cloneNode(true);
+            newDiv.classList.remove('disabled');
+            newDiv.onclick = function() {
+                handleClick(newDiv);
+            };
+
+            document.body.appendChild(newDiv);
+        }
+    </script>
+
+<script src="./assets/scripts/index.js"></script>
+</body>
+</html>
