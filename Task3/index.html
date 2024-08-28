@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do Organizer</title>
+    <link rel="stylesheet" href="./assets/styles/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To Do Organizer</h1>
+        <input type="text" id="taskInput" placeholder="Add new task...">
+        <button onclick="addTask()">Add</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Complete</th>
+                    <th>Task</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="taskList">
+                <!-- Tasks will be added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./assets/scripts/index.js"></script>
+</body>
+</html>
